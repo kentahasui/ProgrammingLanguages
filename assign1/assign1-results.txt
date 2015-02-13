@@ -1,0 +1,4 @@
+Welcome to DrRacket, version 6.1 [3m].
+Language: eopl; memory limit: 128 MB.
+57 success(es) 0 failure(s) 0 error(s) 57 test(s) run
+> 

@@ -1,0 +1,29 @@
+#lang eopl
+
+(define empty-bag
+  (lambda ()
+    '()))
+
+(define add-to-bag
+  (lambda (a s)
+    (cons a s)))
+
+(define how-many
+  (lambda (a s)
+    (cond
+      [(null? s) 0]
+      [(equal? a (car s))
+       (+ 1 (how-many a (cdr s)))]
+      [else
+       (how-many a (cdr s))])))
+
+(define remove-from-bag
+  (lambda (a s)
+    (cond
+      [(null? s)
+       (eopl:error "No occurrences of ~s in this bag" a)]
+      [(equal? a (car s))
+       (cdr s)]
+      [else
+       (remove-from-bag a (cdr s))])))
+              
